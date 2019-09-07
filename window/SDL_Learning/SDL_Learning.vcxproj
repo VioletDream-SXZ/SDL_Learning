@@ -23,7 +23,7 @@
     <ProjectGuid>{9D996021-CCB5-494A-9D25-B2C5E4A7024C}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>SDLLearning</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -91,7 +91,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>F:\SDL_Learning\SDL_Learning\window\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\SDL_Learning\SDL_Learning\window\SDL_Learning\include;F:\SDL_Learning\SDL_Learning\window\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -157,6 +157,10 @@ SDL2main.lib %(AdditionalOptions)</AdditionalOptions>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="SDL_Learning.cpp" />
+    <ClCompile Include="src\LearningSDL.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\LearningSDL.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

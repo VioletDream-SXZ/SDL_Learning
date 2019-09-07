@@ -2,10 +2,39 @@
 //
 
 #include <iostream>
+#include "LearningSDL.h"
 
-int main()
+int main(int argc, char** argv)
 {
-    std::cout << "Hello World!\n";
+#define SECOND_CAP 1
+#ifdef FIRST_CAP
+    hello_SDL();
+#elif defined(SECOND_CAP)
+    Second_SDL sdlTest;
+
+    if (!sdlTest.init())
+    {
+        printf("Failed to initialize!\n");
+    }
+    else
+    {
+        if (!sdlTest.loadMedia())
+        {
+            printf("Failed to load media!\n");
+        }
+        else
+        {
+            SDL_BlitSurface(sdlTest.m_HelloWorld, NULL, sdlTest.m_screenSurface, NULL);
+
+            SDL_UpdateWindowSurface(sdlTest.m_window);
+
+            SDL_Delay(2000);
+        }
+    }
+
+    sdlTest.close();
+#endif
+    return 0;
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
